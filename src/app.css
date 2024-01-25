@@ -4,6 +4,7 @@ h1 {
     -ms-user-select: none !important;
     user-select: none !important;
     color: rgb(6, 145, 214);
-    font-family: cursive;
+    margin: 0px 0px;
+    font-family: 'Courier New', Courier, monospace;
     text-align: center;
 }

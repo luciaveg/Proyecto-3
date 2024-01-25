@@ -14,6 +14,7 @@ import Politica from './pages/Politica';
 import Error from './pages/Error';
 import CardNews from "./components/CardNews/CardNews";
 import './app.css';
+import Footer from "./components/Footer/Footer";
 
 function App(){
 
@@ -34,6 +35,7 @@ function App(){
 				<Route path='*' element={<Error />} />
 		</Routes>
 		</NavBar>
+		<Footer className="footer"/>
 		</>
 	);
 }

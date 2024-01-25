@@ -4,8 +4,8 @@ import "./NavBar.css";
 const NavBar = () => {
   return (
     <>
-    <nav className="nav">
-      <ul>
+    <nav className="navBar">
+      <ul className="ulNav">
         <li>
           <Link to="/dashboard">Dashboard</Link>
         </li>
@@ -16,7 +16,7 @@ const NavBar = () => {
           <Link to="/cocina">Cocina</Link>
         </li>
         <li>
-          <Link to="/musica">Musica</Link>
+          <Link to="/musica">Música</Link>
         </li>
         <li>
           <Link to="/deportes">Deportes</Link>
@@ -25,7 +25,7 @@ const NavBar = () => {
           <Link to="/politica">Política</Link>
         </li>
         <li>
-          <Link to="/today">Más reciente</Link>
+          <Link to="/today">Mas Recientes</Link>
         </li>
         <li>
           <Link to="/login">Login</Link>

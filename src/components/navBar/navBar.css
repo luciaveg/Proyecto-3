@@ -1,26 +1,26 @@
 .navBar {
-  background-color: aqua;
-  padding: 10px 3px;
-  
+  padding: 0px 0px 0px 0px;
+
 }
 
 ul {
   display: flex;
   justify-content: center;
-  margin: 20px 0px;
+  margin: 0px 0px;
   padding: 0px 0px 0px 0px;
 
 }
 
 li {
-  padding: 15px 20px;
+  padding: 10px 25px;
   list-style: none;
-  background-color: burlywood;
+  background-color: #f9ecd4;
+  font: oblique bold 100% cursive;
 }
 
 a {
   text-decoration: none;
-  color: rgb(0, 0, 0);
+  color: rgb(1, 1, 1);
 }
 
 li:hover {
