@@ -1,14 +1,11 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import "./NavBar.css";
 
 const NavBar = () => {
   return (
+    <>
     <nav className="nav">
       <ul>
-        <li>
-          <Link to="/login">Login</Link>
-        </li>
         <li>
           <Link to="/dashboard">Dashboard</Link>
         </li>
@@ -30,8 +27,15 @@ const NavBar = () => {
         <li>
           <Link to="/today">Más reciente</Link>
         </li>
+        <li>
+          <Link to="/login">Login</Link>
+        </li>
+        <li>
+          <Link to="/register">Register</Link>
+        </li>
       </ul>
     </nav>
+    </>
   );
 };
 
