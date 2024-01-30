@@ -1,41 +1,28 @@
-import NavBar from "./components/NavBar/navBar";
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
 
-import { Routes, Route } from 'react-router-dom';
 
-import Home from './pages/Home';
-import About from './pages/About';
-import Contact from './pages/Contact';
-import Today from './pages/Today';
-import Cocina from './pages/Cocina';
-import Deportes from './pages/Deportes';
-import Dashboard from './pages/Dashboard';
-import Musica from './pages/Musica';
-import Politica from './pages/Politica';
-import Error from './pages/Error';
-import CardNews from "./components/CardNews/CardNews";
-import './app.css';
-import Footer from "./components/Footer/Footer";
+
+import { AuthProvider } from './context/authcontext';
+import NavBar from './components/NavBar/navBar';
+import Footer from './components/Footer/Footer';
+import CardNews from './components/CardNews/CardNews';
+import UserForm from './components/UserForm/UserForm';
+
+
 
 function App(){
 
     return (
 		<>
-		<h1 className="tituloApp">APP de Noticias</h1>
-			<NavBar className="navBar">
-			<Routes>
-				<Route path="/" element={<Home data={CardNews}/>} />
-				<Route path="about" element={<About />} />
-				<Route path="contact" element={<Contact />} />
-				<Route path="today" element={<Today/>} />
-                <Route path='cocina' element={<Cocina />} />
-                <Route path='deportes' element={<Deportes />} />
-                <Route path='musica' element={<Musica />} />
-                <Route path='politica' element={<Politica />} />
-                <Route path='dashboard' element={<Dashboard />} />
-				<Route path='*' element={<Error />} />
-		</Routes>
-		</NavBar>
-		<Footer className="footer"/>
+		<AuthProvider>
+		<NavBar/>
+		<UserForm/>
+		<CardNews/>
+		<Footer/>
+		</AuthProvider>
 		</>
 	);
 }

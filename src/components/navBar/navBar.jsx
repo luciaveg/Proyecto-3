@@ -25,7 +25,7 @@ const NavBar = () => {
           <Link to="/politica">Política</Link>
         </li>
         <li>
-          <Link to="/today">Mas Recientes</Link>
+          <Link to="/today">Más Recientes</Link>
         </li>
         <li>
           <Link to="/login">Login</Link>

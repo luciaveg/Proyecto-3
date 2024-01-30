@@ -1,12 +1,15 @@
 .ulFooter {
     display: flex;
-    background-color:  #f9ecd4;
+    background-color:  #d13dfa;
     position: absolute;
     bottom: 0;
     width: 100%;
     height: 40px;
     align-items: center;
     padding: 0px 0px 0px 0px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-
+li {
+    align-items: center;
+}
