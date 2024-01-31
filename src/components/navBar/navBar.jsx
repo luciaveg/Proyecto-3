@@ -1,14 +1,11 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import "./NavBar.css";
 
 const NavBar = () => {
   return (
-    <nav className="nav">
-      <ul>
-        <li>
-          <Link to="/login">Login</Link>
-        </li>
+    <>
+    <nav className="navBar">
+      <ul className="ulNav">
         <li>
           <Link to="/dashboard">Dashboard</Link>
         </li>
@@ -19,7 +16,7 @@ const NavBar = () => {
           <Link to="/cocina">Cocina</Link>
         </li>
         <li>
-          <Link to="/musica">Musica</Link>
+          <Link to="/musica">Música</Link>
         </li>
         <li>
           <Link to="/deportes">Deportes</Link>
@@ -28,10 +25,17 @@ const NavBar = () => {
           <Link to="/politica">Política</Link>
         </li>
         <li>
-          <Link to="/today">Más reciente</Link>
+          <Link to="/today">Más Recientes</Link>
+        </li>
+        <li>
+          <Link to="/login">Login</Link>
+        </li>
+        <li>
+          <Link to="/register">Register</Link>
         </li>
       </ul>
     </nav>
+    </>
   );
 };
 
