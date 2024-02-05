@@ -10,6 +10,7 @@ import NavBar from './components/NavBar/navBar';
 import Footer from './components/Footer/Footer';
 import CardNews from './components/CardNews/CardNews';
 import UserForm from './components/UserForm/UserForm';
+import buttonNoticia from './components/buttonNews/buttonNews'
 
 
 
