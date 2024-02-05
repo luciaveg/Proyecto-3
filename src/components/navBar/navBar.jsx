@@ -6,32 +6,24 @@ const NavBar = () => {
     <>
     <nav className="navBar">
       <ul className="ulNav">
-        <li>
-          <Link to="/dashboard">Dashboard</Link>
-        </li>
+
         <li>
           <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/cocina">Cocina</Link>
-        </li>
-        <li>
-          <Link to="/musica">Música</Link>
-        </li>
-        <li>
-          <Link to="/deportes">Deportes</Link>
-        </li>
-        <li>
-          <Link to="/politica">Política</Link>
-        </li>
-        <li>
-          <Link to="/today">Más Recientes</Link>
         </li>
         <li>
           <Link to="/login">Login</Link>
         </li>
         <li>
           <Link to="/register">Register</Link>
+        </li>
+        <li>
+          <Link to="/themes">Themes</Link>
+        </li>
+        <li>
+          <Link to="/contact">Contact-us</Link>
+        </li>
+        <li>
+          <Link to="/about">About-us</Link>
         </li>
       </ul>
     </nav>

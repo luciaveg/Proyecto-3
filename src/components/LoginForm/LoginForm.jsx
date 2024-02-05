@@ -1,13 +1,13 @@
 import ThemeContext from '../../context/authcontext';
-import './UserForm.css';
+import './LoginForm.css';
 import { useContext, useRef, useState } from 'react';
 
-const UserForm = ()=>{
+const LoginForm = ()=>{
 
     const [dataBase, setDataBase] = useState([]);   // HOOK
     
     const titleRef = useRef();
-    const userNameRef = useRef(null);
+    const emailRef = useRef(null);
     const passwordRef = useRef(null);
 
     const {theme} = useContext(ThemeContext);
@@ -28,7 +28,7 @@ const UserForm = ()=>{
 
         //database.push(...database, userData); //guarda el contenido de memoria state en el database (solo por ejemplo, la manera correcta es con un metodo push, path, post)
         const obj = {
-            username: userNameRef.current.value,
+            email: emailRef.current.value,
             password: passwordRef.current.value,
         };
         setDataBase([...dataBase, obj]);
@@ -37,14 +37,14 @@ const UserForm = ()=>{
     };
     return(
         <form id="form" onSubmit={handleFormSubmit} className={theme}>
-            <h4 ref={titleRef}>Form Title</h4>
+            <h4 ref={titleRef}>Complete to Login</h4>
             <div className='input-container'>
-                <label >Username:</label>
+                <label >email:</label>
                 <input 
                     type="text" 
                     autoComplete="false" 
                     name="username" 
-                    ref={userNameRef}
+                    ref={emailRef}
                 />
             </div>
             <div className='input-container'>
@@ -62,4 +62,4 @@ const UserForm = ()=>{
         </form>        
     );
 };
-export default UserForm;
+export default LoginForm;
