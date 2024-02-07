@@ -1,4 +1,4 @@
-Noticieame es una página web diseñada para simplificar la experiencia de subir y compartir noticias. Con un enfoque limpio y fácil de usar, nuestra plataforma te permite compartir información relevante de manera rápida y eficiente. Desde noticias de última hora hasta artículos de interés especializado, es tu destino para compartir y descubrir contenido informativo.
+Newsly es una página web diseñada para simplificar la experiencia de subir y compartir noticias. Con un enfoque limpio y fácil de usar, nuestra plataforma te permite compartir información relevante de manera rápida y eficiente. Desde noticias de última hora hasta artículos de interés especializado, es tu destino para compartir y descubrir contenido informativo.
 
 PARA INICIAR LA APP:
 1.- npm i   //Para instalar las dependencias
