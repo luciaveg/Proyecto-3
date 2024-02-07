@@ -12,8 +12,9 @@ import { Route, Routes } from 'react-router-dom';
 import Home from './pages/home';
 import LoginForm from './components/LoginForm/LoginForm';
 import Logo from './components/Logo/Logo';
-import NavBar from './components/NavBar/NavBar';
+
 import './app.css';
+import NavBar from './components/NavBar/navBar';
 
 
 
@@ -26,8 +27,8 @@ function App(){
 			<Logo/>
 		<NavBar/>
 		<Routes>
-			<Route path="Home" elemento={<Home/>}/>
-			<Route path="Login" elemento={<LoginForm/>}/>
+			<Route path="/" element={<Home/>}/>
+			<Route path="Login" element={<LoginForm/>}/>
 		</Routes>
 		<CardNews/>
 		</AuthProvider>

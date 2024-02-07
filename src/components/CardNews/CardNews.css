@@ -4,18 +4,27 @@ body {
     display: flex;
     min-width: 320px;
     min-height: 100vh;
-    background-color: #121212;
+    background-color: #292929;
+}
+
+.container-image {
+    min-width: 300px;
+    min-height: 60%;
+    background-color: rgb(139, 139, 139);
+    border-radius: 10px;
+    object-fit: contain;
+
 }
 
 .container {
     display: flexbox;
     background-color: rgb(189, 189, 189, 0.1);
     border-radius: 10px;
-    width: 60%;
-    height: 500px;
+
+    width: 80%;
     margin: 30px;
-    position: absolute;
-    top: 200px;
+    position: relative;
+    top: 0px;
     left: 210px;
     color: rgb(255, 255, 255);
 }
@@ -30,10 +39,14 @@ h2 {
     
 }
 
-
-h5 {
-    padding: 3px;
-    margin: 0px 0px;
+.tituloApp {
+    display: flex;
+    padding: 0% 50% 0% 50%;
+    width: 100%;
+    color:aliceblue;
+    position: relative;
+    top: 0px;
+    left: 210px;
 }
 
 .date {
@@ -42,11 +55,13 @@ h5 {
 }
 
 .image {
-    height: 300px;
 	width: 100%;
+    height: 100%;
     border-radius: 10px;
-    padding: 5px 0px 0px 10px;
+    padding: 0px 0px 0px 0px;
     background-color: rgb(82, 82, 82);
+   /*object-fit: cover;*/ 
+    object-fit: contain;
 }
 
 .description {
@@ -54,7 +69,7 @@ h5 {
     margin: none;
 }
 
-.texto {
+.text {
     padding: 5px 0px 0px 10px;
     margin: none;
 }

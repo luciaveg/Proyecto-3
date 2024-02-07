@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import './CardNews.css';
+const {VITE_BACKENDURL} =import.meta.env
 
 const CardNews = ({avatar, name, title, photo, date, description, text})=>{
     const handleClick = () => {
@@ -8,16 +9,16 @@ const CardNews = ({avatar, name, title, photo, date, description, text})=>{
 
     return (
         <div className="container" onClick={handleClick}>
-            <div className="usuario">{`${avatar}${name}`}
+            <div className="usuario"><img src={VITE_BACKENDURL+avatar} alt={`Avatar de ${name}`}/> {name}
             </div>
             <h2 className="titulo">{`${title}`}</h2>
             <div className="container-image">
-                <img src={photo} alt="Photo de la Noticia" className="image" />
+                <img src={VITE_BACKENDURL+photo} alt="Photo de la Noticia" className="image" />
             </div>
-            <h6 className="date">{`${date}`}</h6>
+            <p className="date">{`${date}`}</p>
             <h4 className="description">{`${description}`}</h4>
             <div>
-            <h5 className="text">{`${text}`}</h5>
+            <p className="text">{`${text}`}</p>
             </div>    
 
         </div>
