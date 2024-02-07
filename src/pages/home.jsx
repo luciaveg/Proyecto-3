@@ -1,9 +1,48 @@
 import CardNews from '../components/CardNews/CardNews';
+import PropTypes from 'prop-types';
+import { getNews } from '../services/NewServices';
+import { useState, useEffect } from 'react';
 
-function Home() {
-	return <div>Home
-		<CardNews/>
-	</div>;
+
+const Home = () => {
+	const [news, setNews] = useState([])
+
+	useEffect(() => {
+		console.log("test");
+		async function getData(){
+			let data = await getNews()
+			console.log(data);
+			setNews(data)
+		}
+
+		getData()
+	}, []) 
+
+	return <main>
+	<h1 className="tituloApp">This is the News...</h1>
+
+	<ul>
+		{news?.map(({id: newsId, profilePictureURL: avatar, nickName: name, title, pictureURL: photo, publishedAt: date, description, text}) => (
+		<li
+			key={newsId}><CardNews
+			avatar={avatar}
+			name={name}
+			title={title}
+			photo={photo}
+			date={date}
+			description={description}
+			text={text}
+		/></li>
+	))}
+	</ul>
+	
+	
+		
+	
+</main>
 }
 
+Home.propTypes = {
+	data: PropTypes.string
+}
 export default Home;

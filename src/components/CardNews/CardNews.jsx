@@ -1,33 +1,34 @@
 import PropTypes from 'prop-types';
 import './CardNews.css';
+const {VITE_BACKENDURL} =import.meta.env
 
-const CardNews = ({avatar, name, title, photo, description, text, date})=>{
+const CardNews = ({avatar, name, title, photo, date, description, text})=>{
     const handleClick = () => {
 
     };
 
     return (
         <div className="container" onClick={handleClick}>
-            <div className="usuario">{`${avatar}${name}`}
+            <div className="usuario"><img src={VITE_BACKENDURL+avatar} alt={`Avatar de ${name}`}/> {name}
             </div>
-            <h2 className="titulo">Titulo de la Noticia</h2>
-            <div className="image">
-                <img src={photo} alt="Photo de la Noticia" />
+            <h2 className="titulo">{`${title}`}</h2>
+            <div className="container-image">
+                <img src={VITE_BACKENDURL+photo} alt="Photo de la Noticia" className="image" />
             </div>
+            <p className="date">{`${date}`}</p>
+            <h4 className="description">{`${description}`}</h4>
             <div>
-                
-                <h4 className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis quasi aliquid nobis! Sint, eaque. Itaque dolores natus, dolorem dolore at sunt praesentium, maxime quae sequi doloribus voluptatum? Aliquam, eum saepe!</h4>
-                <h6 className="texto">Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis quasi aliquid nobis! Sint, eaque. Itaque dolores natus, dolorem dolore at sunt praesentium, maxime quae sequi doloribus voluptatum? Aliquam, eum saepe! Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis quasi aliquid nobis! Sint, eaque. Itaque dolores natus, dolorem dolore at sunt praesentium, maxime quae sequi doloribus voluptatum? Aliquam, eum saepe!Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis quasi aliquid nobis! Sint, eaque. Itaque dolores natus, dolorem dolore at sunt praesentium, maxime quae sequi doloribus voluptatum? Aliquam, eum saepe!Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis quasi aliquid nobis! Sint, eaque. Itaque dolores natus, dolorem dolore at sunt praesentium, maxime quae sequi doloribus voluptatum? Aliquam, eum saepe!</h6>
-                <h7 className="date"></h7>
-            </div>
+            <p className="text">{`${text}`}</p>
+            </div>    
+
         </div>
     )
 };
-CardNews.proptypes = {
+CardNews.propTypes = {
     avatar: PropTypes.string,
     name: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
-    image: PropTypes.string,
+    photo: PropTypes.string,
     description: PropTypes.string.isRequired,
     text: PropTypes.string.isRequired,
     date: PropTypes.string,

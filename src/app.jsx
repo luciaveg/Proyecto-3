@@ -6,12 +6,16 @@ import '@fontsource/roboto/700.css';
 
 
 import { AuthProvider } from './context/authcontext';
-import NavBar from './components/NavBar/navBar';
-import Footer from './components/Footer/Footer';
+
 import CardNews from './components/CardNews/CardNews';
-import UserForm from './components/UserForm/UserForm';
-import buttonNoticia from './components/buttonNews/buttonNews'
-import NoticiaFormulario from './components/buttonNews/buttonNews';
+import { Route, Routes } from 'react-router-dom';
+import Home from './pages/home';
+import LoginForm from './components/LoginForm/LoginForm';
+import Logo from './components/Logo/Logo';
+
+import './app.css';
+import NavBar from './components/NavBar/navBar';
+
 
 
 
@@ -20,10 +24,13 @@ function App(){
     return (
 		<>
 		<AuthProvider>
+			<Logo/>
 		<NavBar/>
-		<UserForm/>
+		<Routes>
+			<Route path="/" element={<Home/>}/>
+			<Route path="Login" element={<LoginForm/>}/>
+		</Routes>
 		<CardNews/>
-		<Footer/>
 		</AuthProvider>
 		</>
 	);

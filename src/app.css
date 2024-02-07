@@ -1,10 +1,14 @@
-h1 {
+/*body {
     -webkit-user-select: none !important;
     -moz-user-select: none !important;
     -ms-user-select: none !important;
     user-select: none !important;
-    color: rgb(6, 145, 214);
+    color: rgb(255, 255, 255);
     margin: 0px 0px;
     font-family: 'Courier New', Courier, monospace;
     text-align: center;
+}*/
+
+li {
+    padding: 0% 0% 0% 0%;
 }
