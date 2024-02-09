@@ -19,12 +19,12 @@ const Home = () => {
 	}, []) 
 
 	return <main>
-	<h1 className="tituloApp">This is the News...</h1>
-
+	
 	<ul>
 		{news?.map(({id: newsId, profilePictureURL: avatar, nickName: name, title, pictureURL: photo, publishedAt: date, description, text}) => (
-		<li
-			key={newsId}><CardNews
+		<li className="liNews"
+			key={newsId}>
+				<CardNews
 			avatar={avatar}
 			name={name}
 			title={title}

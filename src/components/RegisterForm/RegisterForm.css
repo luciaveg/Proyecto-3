@@ -1,0 +1,36 @@
+#form {
+    display: flexbox;
+    position: relative;
+    top: 20%;
+    justify-content: center;
+    background-color: rgba(189, 189, 189, 0.056);
+    color: aliceblue;
+    width: 30vw;
+    height: 50vh;
+    padding: 20px 20px 20px 20px;
+    border-radius: 15px;
+
+}
+
+h4 {
+    text-align: center;
+}
+
+.input-nickName {
+    padding: 20px 400px 40px 80px;
+    
+}
+
+.input-email {
+text-align: center;
+padding: 20px 400px 40px 80px;
+}
+
+.input-password {
+    padding: 20px 400px 40px 80px;
+}
+
+.button-form {
+    color: rgba(253, 255, 255, 0.1);
+}
+

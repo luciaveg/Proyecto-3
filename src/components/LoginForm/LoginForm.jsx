@@ -1,6 +1,6 @@
-import ThemeContext from '../../context/authcontext';
+
 import './LoginForm.css';
-import { useContext, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 
 const LoginForm = ()=>{
 
@@ -10,11 +10,11 @@ const LoginForm = ()=>{
     const emailRef = useRef(null);
     const passwordRef = useRef(null);
 
-    const {theme} = useContext(ThemeContext);
+    //const {theme} = useContext(ThemeContext);
 
 
     const handleFormSubmit =(e) =>{
-        e.preventeDefault();
+        e.preventDefault();
         // handleInputChange(e)
 		//* Llamada post
 		//* const response = fetch('api', {
@@ -36,10 +36,10 @@ const LoginForm = ()=>{
             
     };
     return(
-        <form id="form" onSubmit={handleFormSubmit} className={theme}>
+        <form id="form" onSubmit={handleFormSubmit} >
             <h4 ref={titleRef}>Complete to Login</h4>
-            <div className='input-container'>
-                <label >email:</label>
+            <div className='input-email'>
+                <label >Email:</label>
                 <input 
                     type="text" 
                     autoComplete="false" 
@@ -47,7 +47,7 @@ const LoginForm = ()=>{
                     ref={emailRef}
                 />
             </div>
-            <div className='input-container'>
+            <div className='input-password'>
                 <label htmlFor="Password">Password:</label>
                 <input 
                 type="password" 
@@ -56,7 +56,7 @@ const LoginForm = ()=>{
                     ref={passwordRef}
                 />    
             </div>
-                <div className="button-container">
+                <div className="button-form">
                 <button className="login-button">Login</button>
             </div>
         </form>        

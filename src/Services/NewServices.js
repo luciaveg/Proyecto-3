@@ -16,4 +16,9 @@ const getNews = async () => {
   const data = await res.json();
   return data;
 };
-export { getNews };
+const getThemes = async () => {
+  const res = await fetch(VITE_BACKENDURL + "/themes");
+  const data = await res.json();
+  return data;
+};
+export { getNews, getThemes };

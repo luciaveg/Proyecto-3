@@ -1,5 +1,10 @@
-function Error() {
-	return <div>Page not found</div>;
+const Error = () => {
+    
+    return (
+        <div className="errorPage">
+            <p>Pagina no Encontrada</p>
+        </div>
+        
+    )
 }
-
 export default Error;

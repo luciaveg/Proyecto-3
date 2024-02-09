@@ -1,6 +1,5 @@
-import ThemeContext from '../../context/authcontext';
 import './RegisterForm.css';
-import { useContext, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 
 const RegisterForm = ()=>{
 
@@ -10,11 +9,9 @@ const RegisterForm = ()=>{
     const emailRef = useRef(null);
     const passwordRef = useRef(null);
 
-    const {theme} = useContext(ThemeContext);
-
 
     const handleFormSubmit =(e) =>{
-        e.preventeDefault();
+        e.preventDefault();
         // handleInputChange(e)
 		//* Llamada post
 		//* const response = fetch('api', {
@@ -37,7 +34,7 @@ const RegisterForm = ()=>{
             
     };
     return(
-        <form id="form" onSubmit={handleFormSubmit} className={theme}>
+        <form id="form" onSubmit={handleFormSubmit} >
             <h4 ref={nickNameRef}>Complete to Register</h4>
             <div className='input-nickName'>
                 <label >NickName:</label>
@@ -48,8 +45,8 @@ const RegisterForm = ()=>{
                     ref={nickNameRef}
                 />
             </div>
-            <div className='input-container'>
-                <label >email:</label>
+            <div className='input-email'>
+                <label >Email:</label>
                 <input 
                     type="text" 
                     autoComplete="false" 
@@ -57,7 +54,7 @@ const RegisterForm = ()=>{
                     ref={emailRef}
                 />
             </div>
-            <div className='input-container'>
+            <div className='input-password'>
                 <label htmlFor="Password">Password:</label>
                 <input 
                 type="password" 
@@ -66,8 +63,8 @@ const RegisterForm = ()=>{
                     ref={passwordRef}
                 />    
             </div>
-                <div className="button-container">
-                <button className="login-button">Login</button>
+                <div className="button-form">
+                <button className="login-button">Send</button>
             </div>
         </form>        
     );
