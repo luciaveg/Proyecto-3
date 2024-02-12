@@ -1,16 +1,13 @@
-
-import './LoginForm.css';
+import './RegisterForm.css';
 import { useRef, useState } from 'react';
 
-const LoginForm = ()=>{
+const RegisterForm = ()=>{
 
     const [dataBase, setDataBase] = useState([]);   // HOOK
     
-    const titleRef = useRef();
+    const nickNameRef = useRef();
     const emailRef = useRef(null);
     const passwordRef = useRef(null);
-
-    //const {theme} = useContext(ThemeContext);
 
 
     const handleFormSubmit =(e) =>{
@@ -28,6 +25,7 @@ const LoginForm = ()=>{
 
         //database.push(...database, userData); //guarda el contenido de memoria state en el database (solo por ejemplo, la manera correcta es con un metodo push, path, post)
         const obj = {
+            nickName: nickNameRef.current.value,
             email: emailRef.current.value,
             password: passwordRef.current.value,
         };
@@ -37,7 +35,16 @@ const LoginForm = ()=>{
     };
     return(
         <form id="form" onSubmit={handleFormSubmit} >
-            <h4 ref={titleRef}>Complete to Login</h4>
+            <h4 ref={nickNameRef}>Complete to Register</h4>
+            <div className='input-nickName'>
+                <label >NickName:</label>
+                <input 
+                    type="text" 
+                    autoComplete="false" 
+                    name="NickName" 
+                    ref={nickNameRef}
+                />
+            </div>
             <div className='input-email'>
                 <label >Email:</label>
                 <input 
@@ -57,9 +64,9 @@ const LoginForm = ()=>{
                 />    
             </div>
                 <div className="button-form">
-                <button className="login-button">Login</button>
+                <button className="login-button">Send</button>
             </div>
         </form>        
     );
 };
-export default LoginForm;
+export default RegisterForm;

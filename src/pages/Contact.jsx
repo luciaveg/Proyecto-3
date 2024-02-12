@@ -1,9 +1,12 @@
 const Contact = () => {
 	
 	return (
-		<h1>
+		<div className="message">
+		<h1 >
 		Contact Us
 		</h1>
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis molestiae fugit, suscipit recusandae accusantium iusto sit dolorem illum tenetur autem maxime voluptatum sed nemo eligendi at dicta dolore repellat magni?</p>
+		</div>
 	);
 };
 

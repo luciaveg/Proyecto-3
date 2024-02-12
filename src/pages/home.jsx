@@ -1,6 +1,6 @@
 import CardNews from '../components/CardNews/CardNews';
 import PropTypes from 'prop-types';
-import { getNews } from '../services/NewServices';
+import { getNews } from '../Services/NewServices';
 import { useState, useEffect } from 'react';
 
 
@@ -19,12 +19,12 @@ const Home = () => {
 	}, []) 
 
 	return <main>
-	<h1 className="tituloApp">This is the News...</h1>
-
+	
 	<ul>
 		{news?.map(({id: newsId, profilePictureURL: avatar, nickName: name, title, pictureURL: photo, publishedAt: date, description, text}) => (
-		<li
-			key={newsId}><CardNews
+		<li className="liNews"
+			key={newsId}>
+				<CardNews
 			avatar={avatar}
 			name={name}
 			title={title}
