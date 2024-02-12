@@ -7,14 +7,14 @@ import { AuthProvider } from './context/authcontext';
 
 import { Route, Routes } from 'react-router-dom';
 import Home from './pages/home';
-import LoginForm from './components/LoginForm/LoginForm';
-import Logo from './components/Logo/Logo';
+import LoginForm from './components/loginForm/loginForm';
+import Logo from './components/logo/logo';
 
 import './app.css';
-import NavBar from './components/NavBar/navBar';
+import NavBar from './components/navBar/navBar';
 import Error from './pages/Error';
 import About from './pages/About';
-import RegisterForm from './components/RegisterForm/RegisterForm';
+import RegisterForm from './components/registerForm/registerForm';
 import Contact from './pages/Contact';
 
 

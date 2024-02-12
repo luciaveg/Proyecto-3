@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { getThemes } from "../../Services/NewServices";
+import { getThemes } from "../../services/NewServices";
 import useAuthContext from "../../context/authcontext";
-import "./NavBar.css";
+import "./navBar.css";
 
 const NavBar = () => {
   const [themes, setThemes] = useState([]);

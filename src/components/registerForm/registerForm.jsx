@@ -1,4 +1,4 @@
-import './RegisterForm.css';
+import './registerForm.css';
 import { useRef, useState } from 'react';
 
 const RegisterForm = ()=>{
