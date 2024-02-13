@@ -4,7 +4,7 @@ const Logo = () => {
     
     return (
         <div className="logo">
-            <img src="src/componets/logo/logonoticias.png" alt="Foto del LOGO de la App"/>
+            <img src="src/components/logo/logonoticias.png" alt="Foto del LOGO de la App"/>
         </div>
         
     )
