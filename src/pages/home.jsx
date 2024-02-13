@@ -1,6 +1,6 @@
 import CardNews from '../components/CardNews/CardNews';
 import PropTypes from 'prop-types';
-import { getNews } from '../Services/NewServices';
+import { getNews } from '../services/NewServices';
 import { useState, useEffect } from 'react';
 
 
