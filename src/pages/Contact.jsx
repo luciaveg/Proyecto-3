@@ -1,18 +1,13 @@
-import React from 'react';
-
 const Contact = () => {
   return (
-    <div className="contacto-container">
-      <h1 className="contacto-titulo">Contáctanos</h1>
-      <p className="contacto-descripcion">
-        ¡Nos encantaría saber de ti! No dudes en contactarnos utilizando la
-        información de contacto que se proporciona a continuación.
+    <div className="message">
+      <h1>Contact Us</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Officiis
+        molestiae fugit, suscipit recusandae accusantium iusto sit dolorem illum
+        tenetur autem maxime voluptatum sed nemo eligendi at dicta dolore
+        repellat magni?
       </p>
-      <div className="contacto-info">
-        <p>Email: ejemplo@ejemplo.com</p>
-        <p>Teléfono: +1234567890</p>
-        <p>Dirección: 123 Calle Principal, Ciudad, País</p>
-      </div>
     </div>
   );
 };

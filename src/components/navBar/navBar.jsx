@@ -1,19 +1,22 @@
-import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { getThemes } from "../../services/NewServices";
-import useAuthContext from "../../context/authcontext";
-import "./navBar.css";
+import "./NavBar.css";
+import { useEffect, useState } from "react";
+import { getThemes } from "../../Services/NewServices";
+import useAuthContext from "../../context/Authcontext";
 
 const NavBar = () => {
   const [themes, setThemes] = useState([]);
   const navigate = useNavigate();
-  const { token, user } = useAuthContext();
+  const { token } = useAuthContext();
 
   useEffect(() => {
+    console.log("test");
     async function getData() {
       let data = await getThemes();
+      console.log(data);
       setThemes(data);
     }
+
     getData();
   }, []);
 
@@ -24,32 +27,29 @@ const NavBar = () => {
           <Link to="/">Home</Link>
         </li>
         {!token && (
-          <>
-            <li>
-              <Link to="/login">Login</Link>
-            </li>
-            <li>
-              <Link to="/register">Register</Link>
-            </li>
-          </>
+          <li>
+            <Link to="/login">Login</Link>
+          </li>
         )}
-        {token && (
-          <>
-            <li className="user-info">
-              <img src={user.avatar} alt="Avatar" className="avatar" />
-              <span>{user.username}</span>
-            </li>
-            <li>
-              <button onClick={handleLogout}>Logout</button>
-            </li>
-          </>
-        )}
+        <li>
+          <Link to="/register">Register</Link>
+        </li>
         <li id="themesLi">
           <Link to="/themes">Themes</Link>
           <ul>
-            {themes.map(({ id, name }) => (
+            {themes?.map(({ id, name }) => (
               <li key={id}>
-                <button onClick={() => navigate({ pathname: "/", search: `?theme=${id}` })}>{name}</button>
+                {/* <Link to={{ pathname: '/', search: `?theme=${id}` }}>{name}</Link> */}
+                {/* <Link to={`:${id}`}>{name}</Link> */}
+                {
+                  <button
+                    onClick={() => {
+                      navigate({ pathname: "/", search: `?theme=${id}` });
+                    }}
+                  >
+                    {name}
+                  </button>
+                }
               </li>
             ))}
           </ul>

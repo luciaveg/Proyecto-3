@@ -9,33 +9,31 @@
     text-align: center;
 }*/
 
-
-
 li {
-    padding: 0% 0% 0% 0%;
+  padding: 0% 0% 0% 0%;
 }
 
 .message {
-    color: aliceblue;
-    background-color: rgba(79, 79, 79, 0.13);
-    padding: 30px 30px 30px 30px;
-    position: relative;
-    top: 45vh;
-    left: 10vw;
-    margin: 0px 0px;
-    border-radius: 15px;
+  color: aliceblue;
+  background-color: rgba(79, 79, 79, 0.13);
+  padding: 30px 30px 30px 30px;
+  position: relative;
+  top: 45vh;
+  left: 10vw;
+  margin: 0px 0px;
+  border-radius: 15px;
 }
 .contact {
-    color: aliceblue;
-    background-color: aqua;
+  color: aliceblue;
+  background-color: aqua;
 }
 .errorPage {
-    color: aliceblue;
-    background-color: rgba(79, 79, 79, 0.13);
-    padding: 30px 30px 30px 30px;
-    position: relative;
-    top: 45vh;
-    left: 10vw;
-    margin: 0px 0px;
-    border-radius: 15px;
+  color: aliceblue;
+  background-color: rgba(79, 79, 79, 0.13);
+  padding: 30px 30px 30px 30px;
+  position: relative;
+  top: 45vh;
+  left: 10vw;
+  margin: 0px 0px;
+  border-radius: 15px;
 }
