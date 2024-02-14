@@ -1,21 +1,16 @@
-import '@fontsource/roboto/300.css';
-import '@fontsource/roboto/400.css';
-import '@fontsource/roboto/500.css';
-import '@fontsource/roboto/700.css';
+import { AuthProvider } from './context/Authcontext';
 
-import { AuthProvider } from './context/authcontext';
-
+import './app.css';
 import { Route, Routes } from 'react-router-dom';
 import Home from './pages/home';
 import LoginForm from './components/LoginForm/LoginForm';
 import Logo from './components/Logo/Logo';
-
-import './app.css';
-import NavBar from './components/NavBar/navBar';
+import NavBar from './components/NavBar/NavBar';
 import Error from './pages/Error';
 import About from './pages/About';
 import RegisterForm from './components/RegisterForm/RegisterForm';
 import Contact from './pages/Contact';
+
 
 
 

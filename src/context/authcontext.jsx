@@ -1,11 +1,11 @@
-import { createContext, useContext, useState } from 'react';
+import { createContext, useContext, useEffect, useState } from 'react';
 
 const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-	const [token, setToken] = useState(false); 
+	const [token, setToken] = useState(localStorage.getItem("token") || ""); 
 
-	const handleToken = (jwt) => {
+	/* const handleToken = (jwt) => {
 		if (token === null) {
 			setToken(jwt);
 			localStorage.setItem('token', jwt);
@@ -13,7 +13,16 @@ export const AuthProvider = ({ children }) => {
 			setToken(null);
 			localStorage.removeItem('token');
 		}
+	}; */
+
+	const handleToken = (jwt ="") => {
+			setToken(jwt);
 	};
+
+	useEffect(()=>{
+		localStorage.setItem("token", token)
+	})
+
 
 	const data = { token, handleToken };
 

@@ -2,7 +2,7 @@ import { Link,  useNavigate } from "react-router-dom";
 import "./NavBar.css";
 import { useEffect, useState } from "react";
 import { getThemes } from "../../Services/NewServices";
-import useAuthContext from "../../context/authcontext";
+import useAuthContext from "../../context/Authcontext";
 
 const NavBar = () => {
   const [themes, setThemes] = useState([])

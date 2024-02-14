@@ -1,57 +1,50 @@
 import './RegisterForm.css';
-import { useRef, useState } from 'react';
-
+import { useNavigate } from 'react-router-dom';
+const { VITE_BACKENDURL } = import.meta.env;
 const RegisterForm = ()=>{
 
-    const [dataBase, setDataBase] = useState([]);   // HOOK
+
+    const navigate = useNavigate();
     
-    const nickNameRef = useRef();
-    const emailRef = useRef(null);
-    const passwordRef = useRef(null);
-
-
-    const handleFormSubmit =(e) =>{
+    const handleRegister = async (e) => {
         e.preventDefault();
-        // handleInputChange(e)
-		//* Llamada post
-		//* const response = fetch('api', {
-		//*    method: 'POST',
-		//*     headers: {
-		//*         'Content-type': 'application/json'
-        //*         'Authorization: jwt_token'
-		//*    },
-		//*     body: JSON.stringify(userData)
-		//* })
 
-        //database.push(...database, userData); //guarda el contenido de memoria state en el database (solo por ejemplo, la manera correcta es con un metodo push, path, post)
-        const obj = {
-            nickName: nickNameRef.current.value,
-            email: emailRef.current.value,
-            password: passwordRef.current.value,
-        };
-        setDataBase([...dataBase, obj]);
+        const formData = new FormData(e.target);
 
-            
+        const data = Object.fromEntries(formData.entries());
+console.log(data);
+        const response = await fetch(VITE_BACKENDURL + "/register", {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json',
+                'Authorization': 'jwt_token'
+            },
+                body: JSON.stringify(data)
+            });
+        
+console.log(response);
+
+alert("Registrado Exitosamente");
+
+    navigate(`/login`);
     };
     return(
-        <form id="form" onSubmit={handleFormSubmit} >
-            <h4 ref={nickNameRef}>Complete to Register</h4>
+        <form id="form" onSubmit={handleRegister} >
+            <h4>Complete to Register</h4>
             <div className='input-nickName'>
                 <label >NickName:</label>
                 <input 
                     type="text" 
                     autoComplete="false" 
-                    name="NickName" 
-                    ref={nickNameRef}
+                    name="nickName" 
                 />
             </div>
             <div className='input-email'>
                 <label >Email:</label>
                 <input 
-                    type="text" 
+                    type="email" 
                     autoComplete="false" 
-                    name="username" 
-                    ref={emailRef}
+                    name="email" 
                 />
             </div>
             <div className='input-password'>
@@ -60,7 +53,6 @@ const RegisterForm = ()=>{
                 type="password" 
                     autoComplete="false" 
                     name="password" 
-                    ref={passwordRef}
                 />    
             </div>
                 <div className="button-form">
@@ -69,4 +61,6 @@ const RegisterForm = ()=>{
         </form>        
     );
 };
+
+
 export default RegisterForm;

@@ -1,59 +1,60 @@
 
+import { useNavigate } from 'react-router-dom';
+import useAuthContext from '../../context/Authcontext';
 import './LoginForm.css';
-import { useRef, useState } from 'react';
+
+const { VITE_BACKENDURL } = import.meta.env;
 
 const LoginForm = ()=>{
 
-    const [dataBase, setDataBase] = useState([]);   // HOOK
-    
-    const titleRef = useRef();
-    const emailRef = useRef(null);
-    const passwordRef = useRef(null);
 
-    //const {theme} = useContext(ThemeContext);
+            const { token, handleToken } = useAuthContext();
+            const navigate = useNavigate();
+            if (token){
+                navigate('/');
+            }
+            const handleLogin = async (e) => {
+                e.preventDefault();
 
+                const formData = new FormData(e.target);
+        
+                const data = Object.fromEntries(formData.entries());
+        console.log(data);
+                const response = await fetch(VITE_BACKENDURL + "/login", {
+                    method: 'POST',
+                    headers: {
+                        'Content-type': 'application/json',
+                        'Authorization': 'jwt_token'
+                    },
+                        body: JSON.stringify(data)
+                    });
+                
+                    const {token} = await response.json()
+        console.log(token);
 
-    const handleFormSubmit =(e) =>{
-        e.preventDefault();
-        // handleInputChange(e)
-		//* Llamada post
-		//* const response = fetch('api', {
-		//*    method: 'POST',
-		//*     headers: {
-		//*         'Content-type': 'application/json'
-        //*         'Authorization: jwt_token'
-		//*    },
-		//*     body: JSON.stringify(userData)
-		//* })
-
-        //database.push(...database, userData); //guarda el contenido de memoria state en el database (solo por ejemplo, la manera correcta es con un metodo push, path, post)
-        const obj = {
-            email: emailRef.current.value,
-            password: passwordRef.current.value,
-        };
-        setDataBase([...dataBase, obj]);
-
+        handleToken(token)
+        
+        alert("Logeado");
+        //navigate(`/`);
             
-    };
+    }
     return(
-        <form id="form" onSubmit={handleFormSubmit} >
-            <h4 ref={titleRef}>Complete to Login</h4>
+        <form id="form"  onSubmit={handleLogin}>
+            <h4>Complete to Login:</h4>
             <div className='input-email'>
                 <label >Email:</label>
-                <input 
+                {<input 
                     type="text" 
                     autoComplete="false" 
-                    name="username" 
-                    ref={emailRef}
-                />
+                    name="email" 
+                />}
             </div>
             <div className='input-password'>
                 <label htmlFor="Password">Password:</label>
                 <input 
-                type="password" 
-                    autoComplete="false" 
-                    name="password" 
-                    ref={passwordRef}
+                type="password"
+                autoComplete="false" 
+                name="password" 
                 />    
             </div>
                 <div className="button-form">
@@ -62,4 +63,5 @@ const LoginForm = ()=>{
         </form>        
     );
 };
+
 export default LoginForm;
