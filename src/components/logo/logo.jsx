@@ -1,6 +1,6 @@
 import { CenterFocusStrong } from "@mui/icons-material";
 import "./Logo.css";
-import image from "../Constants/Constants.js";
+import image from "../Constants/constants.js";
 
 const Logo = () => {
   return (
