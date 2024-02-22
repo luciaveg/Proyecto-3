@@ -1,9 +1,11 @@
 import './RegisterForm.css';
 import { useNavigate } from 'react-router-dom';
 const { VITE_BACKENDURL } = import.meta.env;
+
+
+
+
 const RegisterForm = ()=>{
-
-
     const navigate = useNavigate();
     
     const handleRegister = async (e) => {
@@ -23,11 +25,16 @@ console.log(data);
             });
         
 console.log(response);
+            
+            if (response){
+                alert("Registrado Exitosamente");
+                navigate(`/login`);
+            }
 
-alert("Registrado Exitosamente");
-
-    navigate(`/login`);
-    };
+            if (!response){
+                alert("Faltan Datos");
+            }
+};
     return(
         <form id="form" onSubmit={handleRegister} >
             <h4>Complete to Register</h4>

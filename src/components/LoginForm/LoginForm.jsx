@@ -35,7 +35,7 @@ const LoginForm = ()=>{
         handleToken(token)
         
         alert("Logeado");
-        //navigate(`/`);
+        navigate(`/`);
             
     }
     return(
