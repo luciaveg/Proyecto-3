@@ -34,13 +34,16 @@ const NavBar = () => {
         {!token && <li>
           <Link to="/login">Login</Link>
         </li>}
-        <li>
+        {!token && <li>
           <Link to="/register">Register</Link>
-        </li>
+        </li>}
+        {token && <li>
+          <Link to="/">Log-Out</Link>
+        </li>}
         <li id="themesLi">
           <Link to="/themes">Themes</Link>
           <ul>
-    {themes?.map(({id, name}) =>
+        {themes?.map(({id, name}) =>
         <li key={id}>
           {/* <Link to={{ pathname: '/', search: `?theme=${id}` }}>{name}</Link> */}
           {/* <Link to={`:${id}`}>{name}</Link> */}

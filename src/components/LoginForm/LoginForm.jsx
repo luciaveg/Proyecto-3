@@ -1,4 +1,3 @@
-
 import { useNavigate } from 'react-router-dom';
 import useAuthContext from '../../context/Authcontext';
 import './LoginForm.css';
@@ -6,8 +5,6 @@ import './LoginForm.css';
 const { VITE_BACKENDURL } = import.meta.env;
 
 const LoginForm = ()=>{
-
-
             const { token, handleToken } = useAuthContext();
             const navigate = useNavigate();
             if (token){
@@ -32,11 +29,21 @@ const LoginForm = ()=>{
                     const {token} = await response.json()
         console.log(token);
 
+        if (!response) {
+            throw new Error("Los Campos son Obligatorios para ser Logeado")
+        }
+
+        if (!token){
+            alert("Datos Incorrectos");
+            return;
+        }
+
+        if (token) {
         handleToken(token)
-        
         alert("Logeado");
         navigate(`/`);
-            
+        }
+
     }
     return(
         <form id="form"  onSubmit={handleLogin}>
@@ -44,7 +51,7 @@ const LoginForm = ()=>{
             <div className='input-email'>
                 <label >Email:</label>
                 {<input 
-                    type="text" 
+                    type="email" 
                     autoComplete="false" 
                     name="email" 
                 />}

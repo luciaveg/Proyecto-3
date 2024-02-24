@@ -1,9 +1,7 @@
 import './RegisterForm.css';
 import { useNavigate } from 'react-router-dom';
+
 const { VITE_BACKENDURL } = import.meta.env;
-
-
-
 
 const RegisterForm = ()=>{
     const navigate = useNavigate();
@@ -26,13 +24,14 @@ console.log(data);
         
 console.log(response);
             
-            if (response){
-                alert("Registrado Exitosamente");
-                navigate(`/login`);
+            if (response.ok === false){
+                alert("No se puede Registrar. Faltan Datos");
+                return;
             }
 
-            if (!response){
-                alert("Faltan Datos");
+            if (response.ok === true){
+                alert("Registrado Exitosamente");
+                navigate(`/login`);
             }
 };
     return(
