@@ -4,12 +4,12 @@ import "./app.css";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/home";
 import LoginForm from "./components/LoginForm/LoginForm";
-import NavBar from "./components/NavBar/NavBar";
+import Logo from "./components/Logo/Logo";
+import NavBar from "./components/NavBar/navBar";
 import Error from "./pages/Error";
 import About from "./pages/About";
 import RegisterForm from "./components/RegisterForm/RegisterForm";
 import Contact from "./pages/Contact";
-import Logo from "./components/logo/logo";
 
 function App() {
   return (

@@ -1,7 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import "./NavBar.css";
 import { useEffect, useState } from "react";
-import { getThemes } from "../../Services/NewServices";
+import { getThemes } from "../../services/NewServices";
 import useAuthContext from "../../context/Authcontext";
 
 const NavBar = () => {
@@ -31,9 +31,16 @@ const NavBar = () => {
             <Link to="/login">Login</Link>
           </li>
         )}
-        <li>
-          <Link to="/register">Register</Link>
-        </li>
+        {!token && (
+          <li>
+            <Link to="/register">Register</Link>
+          </li>
+        )}
+        {token && (
+          <li>
+            <Link to="/">Log-Out</Link>
+          </li>
+        )}
         <li id="themesLi">
           <Link to="/themes">Themes</Link>
           <ul>

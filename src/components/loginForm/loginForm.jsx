@@ -29,17 +29,27 @@ const LoginForm = () => {
     const { token } = await response.json();
     console.log(token);
 
-    handleToken(token);
+    if (!response) {
+      throw new Error("Los Campos son Obligatorios para ser Logeado");
+    }
 
-    alert("Logeado");
-    //navigate(`/`);
+    if (!token) {
+      alert("Datos Incorrectos");
+      return;
+    }
+
+    if (token) {
+      handleToken(token);
+      alert("Logeado");
+      navigate(`/`);
+    }
   };
   return (
     <form id="form" onSubmit={handleLogin}>
       <h4>Complete to Login:</h4>
       <div className="input-email">
         <label>Email:</label>
-        {<input type="text" autoComplete="false" name="email" />}
+        {<input type="email" autoComplete="false" name="email" />}
       </div>
       <div className="input-password">
         <label htmlFor="Password">Password:</label>
